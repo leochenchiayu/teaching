@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta class="viewport" content="width=device-width,initial-scale=1">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <style>
+    </style>
+  </head>
+  <body>
+      <!-- 1 -->
+    <!-- <form>
+        <label for="user">帳號 : </label>
+        <input type="text" id="user" name="user"><br>
+        <label for="pwd">密碼 : </label>
+        <input type="text" id="password" name="password">
+        <button id="login">登入</button>
+       </form>
+       <div id="result"></div> -->
+       
+
+       <!-- 2 -->
+       <!-- <form>
+        年收入 :
+        <input type="radio" name="income">50 萬以下
+        <input type="radio" name="income" checked>50~100 萬
+        <input type="radio" name="income">100以上<br>
+        投資經驗 :
+        <input type="checkbox" name="experience1" checked>基金
+        <input type="checkbox" name="experience1" checked>股票
+        <input type="checkbox" name="experience1">選擇權
+        <input type="checkbox" name="experience1">期貨<br>
+        投資屬性 :
+        <select name="risk">
+          <option value="positive" selected>積極型</option>
+          <option value="robust">穩健型</option>
+          <option value="conservative">保守型</option>
+        </select><br>
+        備註 :
+        <textarea name="remark" rows="5" cols="25">預設值</textarea><br>   
+        <button id="ok">確定</button>
+      </form>
+      <div id="result"></div> -->
+
+      <!-- 3 -->
+      <!-- <form class="test" id="login_form">
+        <label for="user">帳號 : </label>
+        <input type="text" id="user" name="user"><br>
+        <label for="pwd">密碼 : </label>
+        <input type="text" id="pwd" name="pwd">
+        <button id="login">登入</button>
+       </form>
+       <div id="result"></div> -->
+
+
+       <!-- 4 -->
+       <!-- <form id="login_form">
+        <label for="user">帳號 : </label>
+        <input type="text" id="user" name="user"><br>
+        <label for="pwd">密碼 : </label>
+        <input type="text" id="pwd" name="pwd">
+        <button id="login">登入</button>
+       </form>
+       <div id="result"></div> -->
+
+
+       <!-- 5 -->
+       <form id="login_form">
+        <label for="user">帳號 : </label>
+        <input type="text" id="user" name="user"><br>
+        <label for="pwd">密碼 : </label>
+        <input type="text" id="pwd" name="pwd">
+        <button id="login">登入</button>
+       </form>
+       <div id="result"></div>
+     
+
+
+    <script>
+        /*1*/
+      /*$(function(){
+        var obj1={user:"tony",pwd:"123"};
+        document.write('obj1={user:"tony",pwd:"123"}<br>');
+        var qstr=$.param(obj1);
+        document.write(qstr + '<br>');
+        var obj2={a:1,b:{b1:2,b2:3},c:[4,5,6]};
+        document.write('obj2={a:1,b:{b1:2,b2:3},c:[4,5,6]}<br>');
+        var qstr=$.param(obj2);
+        document.write(qstr + '<br>');
+        });*/
+
+        /*2*/
+        /*$(function(){
+            $("#login").click(function(){
+              var qstr=$.param($("input"));   //傳入 input 控制項物件陣列
+              $("#result").html(qstr);
+              return false;
+              });
+            });*/
+            /*$(function(){
+                $("#ok").click(function(){
+                  var qstr=$.param($("input,select,textarea"));
+                  $("#result").html(qstr);
+                  return false;
+                  });
+                });*/
+
+        /*3*/
+        /*$(function(){
+            $("#login").click(function(){
+              var qstr=$("#login_form").serialize();
+              $("#result").html(qstr);
+              return false;
+              });
+            });*/
+
+        /*4*/
+        /*$(function(){
+            $("#login").click(function(){
+              var arr=[];    //儲存輸出訊息用
+              var SA=$("#login_form").serializeArray();   //轉成物件陣列
+              $.each(SA, function(idx, obj){       //迭代物件陣列
+                console.log(idx);
+                console.log(obj);
+                arr.push("" + idx + "" + obj);
+                $.each(obj, function(k, v){            //迭代物件屬性
+                  arr.push(" " + k + ":" + v);
+                  });         
+                });
+              var qstr=$.param(SA);    //將物件陣列序列化
+              arr.push(qstr);
+              $("#result").html(arr.join("<br>"));
+              return false;
+              });
+            });*/
+
+            /*5*/
+            $(function(){
+                $("#login").click(function(){
+                  $.get({
+                    url: "test_json.php",
+                    data: $("#login_form").serialize(),
+                    success: function(data) {
+                      var user=data.user;
+                      var pwd=data.pwd;
+                      var result="帳號=" + user + " 密碼=" + pwd;
+                      $("#result").html(result);
+                      }
+                    });
+                  return false;
+                  });
+                });
+
+    </script>
+  </body>
+</html>

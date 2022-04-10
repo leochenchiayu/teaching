@@ -1,0 +1,222 @@
+/*hamburger*/
+body{
+    overflow-x: hidden;
+}
+.clearfix::after {
+    content:"";
+    display: block;
+    clear: both;
+}
+
+.hamburger {
+    float: right;
+}
+
+.collapse{
+    
+    margin:0px;
+    padding:0px;
+    border:0px;
+    box-sizing:border-box;
+    
+}
+
+#top{
+    position: relative;
+    display: block;
+}
+
+.on_img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background:rgba(0, 0, 0, .5); */
+    /* animation-name:go_start; */
+    /* animation-duration: .5s; */
+}
+
+.on_img:after,.on_img:before{
+    display: block;
+    background:rgba(0, 0, 0, .5);
+    width: 0;
+    height: 100%;
+    content: "";
+    position: absolute;
+    /* z-index: -1; */
+    
+}
+
+.on_img:after{
+    
+    width: 50%;
+    animation: after_an 1s;
+    animation-delay: .2s;
+    animation-fill-mode: forwards;
+}
+
+.on_img:before{
+    width:50%;
+    right:0;
+    animation: before_an 1s;
+    animation-delay: .2s;
+    animation-fill-mode: forwards;
+
+}
+
+@keyframes after_an {
+    from{
+        /* bottom:auto;
+        left:auto; */
+        width:50%;
+
+    }to{
+        width:0%;
+
+    }
+}
+
+@keyframes before_an {
+    from{
+        /* top:auto;
+        right:auto; */
+        width:50%;
+    }to{
+        width:0%;
+    }
+}
+
+.click_me{
+    position: absolute;
+    bottom:40px;
+    display:block;
+    width:100%;
+    margin:auto;
+    cursor:pointer;
+}
+.click_me p{
+    display: table;
+    vertical-align: top;
+    margin: 0 auto;
+    color:white;
+    font-size: 25px;
+    padding: 15px;
+    border:3px solid white;
+    border-radius: 10px;
+}
+
+.menu a:hover, .login a:hover{
+    color:white;
+    text-decoration: none;
+}
+
+.logo>a>img{
+    width: 60px;
+    height: 60px;
+}
+
+.evolution h2,.list h3{
+    margin-top: 30px;
+}
+
+.evolution p{
+    font-size: 20px;
+    margin-left: 20px;
+}
+
+.list h3{
+    margin-left: 20px;
+}
+
+.evolution p.small-mark,.list li{
+    margin-left: 40px;
+    font-size: 15px;
+}
+
+.scrollTop{
+    position: relative;
+    opacity:0;
+    transition:all .5s;
+    transform:translateX(30%) scale(0.95);
+}
+
+.scrollTop.active {
+    opacity:1;
+    transform:translateX(0%) scale(1);
+  }
+
+.bottom_title>h1,.bottom_title>h1{
+    text-decoration: underline;
+    font-weight: bold;
+    color:#cccb85;
+}
+
+.list{
+    margin-top: 40px;
+}
+
+.list li{
+    list-style-type: none;
+}
+
+.list_item .title{
+    text-align: center;
+}
+
+.list_item .title>div{
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 auto;
+}
+
+.list_item h3{
+    padding: 20px;
+    background:rgb(212, 135, 48);
+    color:white;
+    border-radius: 20px;
+}
+
+.menu a,.login a{
+    display:block;
+    text-align: center;
+}
+
+@media(min-width:960px){
+    .hamburger {
+        display: none;
+    }
+    
+    .collapse{
+        display:block;
+    }
+    .logo{
+        float:left;
+    }
+    .nav li{
+        float:left;
+    }
+    .collapse{
+        float:left;
+    }
+    .menu>ul>li>ul{
+        width:100px;
+        display:block;    
+    }
+    .menu a,.login a{
+        display:block;
+        text-align: center;
+    }
+    
+}
+/*endhamburger*/
+
+.lock{
+    margin:auto;
+}
+
+.image{
+    width:216px ;
+    height:109px ;
+}
+

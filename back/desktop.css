@@ -1,0 +1,145 @@
+@media(min-width: 1200px){
+    /* BTN */
+    
+    /* GRID */
+    
+    .fixed-width {
+        width: 1200px;
+        
+    }
+    .col-xl-1{
+        width: calc(100% / 20 * 1);
+    }
+    .col-xl-2{
+        width: calc(100% / 20 * 2);
+    }
+    .col-xl-3{
+        width: calc(100% / 20 * 3);
+    }
+    .col-xl-4{
+        width: calc(100% / 20 * 4);
+    }
+    .col-xl-5{
+        width: calc(100% / 20 * 5);
+    }
+    .col-xl-6{
+        width: calc(100% / 20 * 6);
+    }
+    .col-xl-7{
+        width: calc(100% / 20 * 7);
+    }
+    .col-xl-8{
+        width: calc(100% / 20 * 8);
+    }
+    .col-xl-9{
+        width: calc(100% / 20 * 9);
+    }
+    .col-xl-10{
+        width: calc(100% / 20 * 10);
+    }
+    .col-xl-11{
+        width: calc(100% / 20 * 11);
+    }
+    .col-xl-12{
+        width: calc(100% / 20 * 12);
+    }
+    .col-xl-13{
+        width: calc(100% / 20 * 13);
+    }
+    .col-xl-14{
+        width: calc(100% / 20 * 14);
+    }
+    .col-xl-15{
+        width: calc(100% / 20 * 15);
+    }
+    .col-xl-16{
+        width: calc(100% / 20 * 16);
+    }
+    .col-xl-17{
+        width: calc(100% / 20 * 17);
+    }
+    .col-xl-18{
+        width: calc(100% / 20 * 18);
+    }
+    .col-xl-19{
+        width: calc(100% / 20 * 19);
+    }
+    .col-xl-20{
+        width: calc(100% / 20 * 12);
+    }
+    nav{
+        height: 60px;
+        background: #cccb85f;
+        /* transition:2s; */
+        animation-name:nav;
+        animation-duration: .5s;
+        z-index:99;
+    }
+    nav a, .username {
+        display: block;
+        line-height: 50px;
+        color: #fff;
+        text-decoration: none;
+        padding: 0 10px;
+        
+    }
+
+    
+    
+    /* GRID DONE */
+    /* NAV ***************************************************/
+    
+    /* HEADER */
+    header {
+        /* padding-top: 300px;
+        padding-bottom: 300px; */
+        background: url("https://pica.nidbox.net/47/1457848949_acbccd15_47.jpg") no-repeat center center fixed;
+        background-size: cover;
+        text-align: center;
+        color: #fff;
+    }
+    /* header {
+        display: table;
+        height: 600px;
+        background: url("https://picsum.photos/id/1/1600/800") no-repeat center center;
+        background-size: cover;
+    }
+    header .fixed-width {
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+    } */
+
+    header h1 {
+        font-size: 72px;
+        
+    }
+    header p {
+        
+        /* font-size: 32px; */
+       
+    }
+
+
+
+
+    
+    
+    /* PRODUCT */
+   
+    /* AD */
+    /* #ad {
+        padding-top: 120px;
+        padding-bottom: 120px;
+        background: url("https://picsum.photos/id/190/1600/800")no-repeat center center;
+        background-size: cover;
+        text-align: center;
+    } */
+   
+   
+
+    /* BUSINESS */
+   
+    /* SERVICE */
+    
+}

@@ -1,0 +1,188 @@
+/*hamburger*/
+body{
+    overflow-x: hidden;
+}
+.clearfix::after {
+    content:"";
+    display: block;
+    clear: both;
+}
+
+.hamburger {
+    float: right;
+}
+
+.collapse{
+    
+    margin:0px;
+    padding:0px;
+    border:0px;
+    box-sizing:border-box;
+    
+}
+
+#top{
+    position: relative;
+    display: block;
+}
+
+.on_img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background:rgba(0, 0, 0, .5); */
+    /* animation-name:go_start; */
+    /* animation-duration: .5s; */
+}
+
+.on_img:after,.on_img:before{
+    display: block;
+    background:rgba(0, 0, 0, .5);
+    width: 0;
+    height: 100%;
+    content: "";
+    position: absolute;
+    /* z-index: -1; */
+    
+}
+
+.on_img:after{
+    
+    width: 50%;
+    animation: after_an 1s;
+    animation-delay: .2s;
+    animation-fill-mode: forwards;
+}
+
+.on_img:before{
+    width:50%;
+    right:0;
+    animation: before_an 1s;
+    animation-delay: .2s;
+    animation-fill-mode: forwards;
+
+}
+
+@keyframes after_an {
+    from{
+        /* bottom:auto;
+        left:auto; */
+        width:50%;
+
+    }to{
+        width:0%;
+
+    }
+}
+
+@keyframes before_an {
+    from{
+        /* top:auto;
+        right:auto; */
+        width:50%;
+    }to{
+        width:0%;
+    }
+}
+
+.click_me{
+    position: absolute;
+    bottom:40px;
+    display:block;
+    width:100%;
+    margin:auto;
+    cursor:pointer;
+}
+.click_me p{
+    display: table;
+    vertical-align: top;
+    margin: 0 auto;
+    color:white;
+    font-size: 25px;
+    padding: 15px;
+    border:3px solid white;
+    border-radius: 10px;
+}
+
+.menu li,.login li{
+    text-align: center;
+}
+
+
+a:hover{
+    text-decoration: none;
+    color:white !important;
+}
+
+.logo>a>img{
+    width: 60px;
+    height: 60px;
+}
+.unlock{
+    max-width:586px;
+    max-height: 296px;
+}
+
+.novel,.article{
+    background: #cccb85;
+}
+
+.author,.article{
+    margin-top: 50px;
+}
+
+.article>div>div{
+    padding: 50px;
+}
+
+.article h4{
+    word-break: break-all;
+    letter-spacing: 18px;
+    line-height: 45px;
+}
+
+.article .quote{
+    background: white;
+}
+
+.article .quote h2{
+    word-break: break-all;
+    padding-right: 50px;
+    padding-left: 50px;
+    line-height: 90px;
+}
+
+.underline{
+    text-decoration: underline;
+}
+
+
+
+@media(min-width:960px){
+    .hamburger {
+        display: none;
+    }
+    
+    .collapse{
+        display:block;
+    }
+    .logo{
+        float:left;
+    }
+    .nav li{
+        float:left;
+    }
+    .collapse{
+        float:left;
+    }
+    
+}
+/*endhamburger*/
+
+
+.image{
+    width:216px ;
+    height:109px ;
+}

@@ -1,0 +1,191 @@
+body{
+    overflow-x: hidden;
+}
+.clearfix::after {
+    content:"";
+    display: block;
+    clear: both;
+}
+
+.vam > * {
+    font-size: 16px;
+    display: inline-block;
+    vertical-align: middle;
+    float: none!important;
+}
+
+.hamburger {
+    float: right;
+}
+
+.collapse{
+    
+    margin:0px;
+    padding:0px;
+    border:0px;
+    box-sizing:border-box;
+    
+}
+
+#top{
+    position: relative;
+    display: block;
+}
+
+.on_img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background:rgba(0, 0, 0, .5); */
+    /* animation-name:go_start; */
+    /* animation-duration: .5s; */
+}
+
+.on_img:after,.on_img:before{
+    display: block;
+    background:rgba(0, 0, 0, .5);
+    width: 0;
+    height: 100%;
+    content: "";
+    position: absolute;
+    /* z-index: -1; */
+    
+}
+
+.on_img:after{
+    
+    width: 50%;
+    animation: after_an 1s;
+    animation-delay: .2s;
+    animation-fill-mode: forwards;
+}
+
+.on_img:before{
+    width:50%;
+    right:0;
+    animation: before_an 1s;
+    animation-delay: .2s;
+    animation-fill-mode: forwards;
+
+}
+
+@keyframes after_an {
+    from{
+        /* bottom:auto;
+        left:auto; */
+        width:50%;
+
+    }to{
+        width:0%;
+
+    }
+}
+
+@keyframes before_an {
+    from{
+        /* top:auto;
+        right:auto; */
+        width:50%;
+    }to{
+        width:0%;
+    }
+}
+
+.click_me{
+    position: absolute;
+    bottom:40px;
+    display:block;
+    width:100%;
+    margin:auto;
+    cursor:pointer;
+}
+.click_me p{
+    display: table;
+    vertical-align: top;
+    margin: 0 auto;
+    color:white;
+    font-size: 25px;
+    padding: 15px;
+    border:3px solid white;
+    border-radius: 10px;
+}
+
+.logo a,.menu a,.login a{
+    display: block;
+    margin: auto;
+    text-align: center;
+}
+
+
+.logo>a>img{
+    width: 60px;
+    height: 60px;
+}
+
+a:hover{
+    text-decoration: none;
+    color:white !important;
+}
+
+.starting img{
+    display: block;
+    margin: auto;
+    width: 80%;
+}
+
+
+
+.starting h1{
+    margin-top:30px;
+}
+
+.explanation{
+    margin-top: 50px;
+}
+
+.explanation h4{
+    margin-top: 15  px;
+}
+
+
+.reality img{
+    display: block;
+    margin:auto;
+    width: 50%;
+}
+
+.reality img,.reality h1{
+    margin-top: 30px;
+}
+
+@media(min-width:960px){
+    .hamburger {
+        display: none;
+    }
+    
+    .collapse{
+        display:block;
+    }
+    .logo{
+        float:left;
+    }
+    .nav li{
+        float:left;
+    }
+    .collapse{
+        float:left;
+    }
+    .menu>ul>li>ul{
+        width:100px;
+        display:block;    
+    }
+}
+/*endhamburger*/
+
+
+.image{
+    width:216px ;
+    height:109px ;
+}

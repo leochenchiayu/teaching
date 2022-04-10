@@ -1,0 +1,180 @@
+    body{
+        overflow-x: hidden;
+    }
+
+    .clearfix::after {
+        content:"";
+        display: block;
+        clear: both;
+    }
+
+    .hamburger {
+        float: right;
+    }
+    
+    .collapse{
+        
+        margin:0px;
+        padding:0px;
+        border:0px;
+        box-sizing:border-box;
+        
+    }
+
+   .logo a, .menu a, .login a{
+        text-decoration: none;
+        text-align: center;
+        display: block;
+    }
+
+    .logo a:hover, .menu a:hover, .login a:hover{
+        color:white;
+    }
+
+    .logo>a>img{
+        width: 60px;
+        height: 60px;
+    }
+
+    
+    
+    
+    
+
+    @media(min-width:960px){
+        .hamburger {
+            display: none;
+        }
+        
+        .collapse{
+            display:block;
+        }
+        .logo{
+            float:left;
+        }
+        .nav li{
+            float:left;
+        }
+        .collapse{
+            float:left;
+        }
+        .menu>ul>li>ul{
+            width:100px;
+            display:block;    
+        }
+    }
+    /*endhamburger*/
+
+   
+    .bg{
+        height: auto;
+        padding: 50px;
+        
+    }
+    .space{
+        width: 300px;
+        height: 200px;
+        position: relative;
+        perspective: 800px;
+        margin: 15% auto;
+        
+    }
+
+    .carousel{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        transform-style: preserve-3d;
+        animation: ro2 3s infinite;
+        animation-direction: alternate;
+    }
+    .plane{
+        width: 100%;
+        height: 100%;
+        position:absolute;
+        /*background-image: linear-gradient(red,purple);*/
+        /*opacity: .6;*/
+    }
+    .plane>img{
+        width: 100%;
+    }
+    .plane:nth-of-type(1){
+        transform: translateZ(300px);
+    }
+    .plane:nth-of-type(2){
+        transform: rotateY(60deg)translateZ(300px);
+    }
+    .plane:nth-of-type(3){
+        transform: rotateY(120deg)translateZ(300px);
+    }
+    .plane:nth-of-type(4){
+        transform: rotateY(180deg)translateZ(300px);
+    }
+    .plane:nth-of-type(5){
+        transform: rotateY(240deg)translateZ(300px);
+    }
+    .plane:nth-of-type(6){
+        transform: rotateY(300deg)translateZ(300px);
+    }
+    .plane img{
+        
+        height:230px;
+    }
+    
+    
+    @keyframes ro{
+        from{
+
+        }
+        to{
+            transform:rotateY(360deg);
+        }
+    }
+    @keyframes ro2{
+        0%{
+
+        }
+        8.3%{
+
+        }
+        16.6%{
+            transform:rotateY(60deg);
+        }
+        24.9%{
+            transform:rotateY(60deg);
+        }
+        33.2%{
+            transform:rotateY(120deg);
+        }
+        41.5%{
+            transform:rotateY(120deg);
+        }
+        49.8%{
+            transform:rotateY(180deg);
+        }
+        58.1%{
+            transform:rotateY(180deg);
+        }
+        66.4%{
+            transform:rotateY(240deg);
+        }
+        
+        74.7%{
+            transform:rotateY(240deg);
+        }
+        83%{
+            transform:rotateY(300deg);
+        }
+        91.3%{
+            transform: rotateY(300deg);
+        }
+        100%{
+            transform: rotateY(360deg);
+        }
+
+        
+    }
+    .image{
+        width:216px ;
+        height:109px ;
+    }

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>首頁</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="shortcut icon" href="LOGO.png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="hamburger.css">
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<style>
+    /*hamburger*/
+    
+</style>
+<body>
+    <nav class="full-width clearfix">
+        <div class="fixed-width">
+            <div class="hamburger"><span></span></div>
+            <div class="logo">
+                <a href="#"><img style="display:block;" src="LOGO.png" alt=""></a>
+            </div>
+            <!-- <div class="collapse"> -->
+                <div class="menu">
+                    <ul>
+                        <li><a class="mt-auto" href="index.html">首頁</a></li>
+                        <li class="down1"><a class="mt-auto" href="lesson1.html">先秦</a>
+                            
+                        </li>
+                        <li class="down2"><a class="mt-auto" href="lesson2.html">魏晉</a>
+                            
+                        </li>
+                        <li class="down3"><a class="mt-auto" href="lesson3.html">唐代</a>
+                            
+                        </li>
+                        <li class="down4"><a class="mt-auto" href="lesson4.html">明清</a>
+                            
+                        </li>
+                        <li class="down5"><a class="mt-auto" href="lesson5.html">現代</a>
+                            
+                        </li>
+                        <li class="down5"><a class="mt-auto" href="search.html">搜尋字義</a>
+                            
+                        </li>
+                    </ul>
+                </div>
+            <!-- </div> -->
+                <div class="login">
+                    <ul>
+                        <li><a href="./back/php_user/register.php">註冊</a></li>
+                        <li><a href="./back/php_user/login.php">登入</a></li>
+                    </ul>
+                </div>
+        </div>
+    </nav>
+    
+
+
+    <header >
+    </header>
+
+
+
+    
+    <div class="full-width" id="product">
+        <!-- <div class="col-xl-12 col-12"> -->
+            
+        <!-- </div> -->
+        
+        <div class="fixed-width clearfix">
+            <div class="col-xl-20 col-20">
+                <h2 class="section-title t-center">單元</h2>
+            </div>
+            <div class="col-xl-12 col-12">
+                <div class="col-lg-4 col-12 t-center">
+                    <a href="lesson1.html"><img class="image" src="ch1.jpg" alt="" ></a>
+                    <p class="t-center">先秦</p>
+                </div>
+                <div class="col-lg-4 col-12 t-center lock">
+                    <a href="lesson2.html"><img class="image" src="ch2.jpg" alt="" ></a>
+                    <p class="t-center">魏晉</p>
+                </div>
+                <div class="col-lg-4 col-12 t-center lock">
+                    <a href="lesson3.html"><img class="image" src="ch3-1.jpg" alt=""></a>
+                    <p class="t-center">唐代</p>
+                </div>
+            </div>
+            <div class="col-xl-12 col-12">
+                <div class="col-lg-6 col-6 t-center lock">
+                    <a href="lesson4.html"><img class="image" src="ch4-pic-1.jpg" alt=""></a>
+                    <p class="t-center">明清</p>
+                </div>
+                <div class="col-lg-6 col-6 t-center lock">
+                    <a href="lesson5.html"><img class="image" src="lesson5.jpg" alt=""></a>
+                    <p class="t-center">現代</p>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <div class="fixed-width clearfix">
+            <div style="background:#6b9b69;" class="bg">
+                 <div class="space">
+                     <div class="carousel col-xl-20 col-20">
+                        <div class="col-xl-12 col-12">
+                            <div class="plane"><img src="img1.jpg" alt=""></div>
+                            <div class="plane"><img src="img2.jpg" alt=""></div>
+                            <div class="plane"><img src="img3.jpg" alt=""></div>
+                            <div class="plane"><img src="img1.jpg" alt=""></div>
+                            <div class="plane"><img src="img2.jpg" alt=""></div>
+                            <div class="plane"><img src="img3.jpg" alt=""></div>
+                        </div>
+                 </div>
+            </div>
+        <!-- </div> -->
+    </div>
+
+    <!-- <footer class="mb-2">
+        2020 嘉義大學數位學習系系統化教學實作課作品，若有侵權，請通知a0979663740@gmail.com，我們會盡速修改 -->
+        <!-- <p>2020 ©</p> -->
+    <!-- </footer> -->
+    
+
+    
+
+
+    <script>
+        document.onclick = function(data){
+            let target = data.target.dataset.modal;
+            console.log(target)
+            let modal = document.getElementById(target);//給他定義一個變數
+            if(data.target.className === 'modal-btn'){
+                //document.getElementById('modal').style.display = 'block';
+                modal.style.display = 'inline-block';
+                modal.style.width = '100%';
+
+            }
+
+            //if(data.target.className === 'close' || data.target.className === 'overlay'/*點外面也可以刪除*/){
+                //document.getElementById('modal').style.display = 'none';
+              //  modal.style.display = 'none';
+                //data.target.parentElement.parentElement.style.display = 'none';
+            
+           // }
+             let closes = document.querySelectorAll('.close');
+             closes.forEach(function(close){
+                close.onclick = function(e){
+                    console.log(e);
+                    e.target.parentElement.parentElement.style.display = 'none';
+                }
+             })
+             
+        }
+
+        
+        $(document).ready(function(){
+            $(".hamburger").click(function(){
+                $(this).toggleClass('hamburger-x');
+                $(".menu").slideToggle();
+            })
+
+            $(".down1").click(function(){
+                $(".show1").slideToggle("slow");
+            })
+            
+            $(".down2").click(function(){
+                $(".show2").slideToggle();
+            })
+
+            $(window).resize/*控制畫面大小*/(function(){
+                let w =$(window).width();
+                console.log(w);
+                if(w>960){
+                    $('.menu').show();
+                }else{
+                    $('.menu').hide();
+                    $('.hamburger').removeClass('hamburger-x');
+                }
+            })
+        })
+    </script>
+</body>
+</html>

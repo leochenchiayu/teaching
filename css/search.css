@@ -1,0 +1,131 @@
+/*hamburger*/
+body{
+    overflow-x: hidden;
+   
+}
+
+.bgimg{
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -999;
+}
+
+.bgimg img{
+    height: 100%;
+}
+
+.menu li,.login li{
+    text-align: center;
+}
+
+.clearfix::after {
+    content:"";
+    display: block;
+    clear: both;
+}
+
+.hamburger {
+    float: right;
+}
+
+.collapse{
+    
+    margin:0px;
+    padding:0px;
+    border:0px;
+    box-sizing:border-box;
+    
+}
+
+.menu a:hover, .login a:hover{
+    color:white;
+    text-decoration: none;
+}
+
+.logo>a>img{
+    width: 60px;
+    height: 60px;
+}
+
+.search h1{
+    padding: 50px;
+    cursor: pointer;
+    color:white;
+    border-radius:10px;
+    margin-top: 100px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.query_word{
+    display:none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index:99;
+}
+
+.query_word .modal{
+    display: block;
+}
+
+.query_word .modal-body button{
+    margin-top: 20px;
+    float:right;
+}
+
+.result a{
+    color:white;
+}
+
+.result a:hover{
+    color:white;
+}
+
+.query_word .result{
+    overflow-y: scroll;
+    height: 300px;
+}
+
+@media(min-width:960px){
+    .hamburger {
+        display: none;
+    }
+    
+    .collapse{
+        display:block;
+    }
+    .logo{
+        float:left;
+    }
+    .nav li{
+        float:left;
+    }
+    .collapse{
+        float:left;
+    }
+    .menu>ul>li>ul{
+        width:100px;
+        display:block;    
+    }
+    .menu a,.login a{
+        display:block;
+        text-align: center;
+    }
+    
+}
+/*endhamburger*/
+
+.lock{
+    margin:auto;
+}
+
+.image{
+    width:216px ;
+    height:109px ;
+}

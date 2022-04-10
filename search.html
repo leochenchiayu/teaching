@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>首頁</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="shortcut icon" href="LOGO.png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="hamburger.css">
+    <link rel="stylesheet" href="./css/search.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    
+</head>
+<body>
+
+    <nav class="full-width clearfix">
+        <div class="fixed-width">
+            <div class="hamburger"><span></span></div>
+            <div class="logo">
+                <a href="#"><img style="display:block;" src="LOGO.png" alt=""></a>
+            </div>
+            <!-- <div class="collapse"> -->
+                <div class="menu">
+                    <ul>
+                        <li><a href="index.html">首頁</a></li>
+                        <li class="down1"><a href="lesson1.html">先秦</a></li>
+                        <li class="down2"><a href="lesson2.html">魏晉</a></li>
+                        <li class="down3"><a href="lesson3.html">唐代</a></li>
+                        <li class="down4"><a href="lesson4.html">明清</a></li>
+                        <li class="down5"><a href="lesson5.html">現代</a></li>
+                        <li class="down5"><a href="search.html">搜尋字義</a></li>
+                    </ul>
+                </div>
+            <!-- </div> -->
+                <div class="login">
+                    <ul>
+                        <li><a href="./php_user/register.php">註冊</a></li>
+                        <li><a href="http://leochen.atwebpages.com/php_user/login.php">登入</a></li>
+                    </ul>
+                </div>
+        </div>
+    </nav>
+
+    <div class="bgimg">
+        <img src="https://www.macmillandictionaryblog.com/wp-content/uploads/2018/01/dictionary-1024x575.jpg" alt="">
+    </div>
+    
+    <div class="full-width clearfix search">
+        <div class="fixed-width">
+            <div class="col-xl-12 col-12">
+                <!-- <div class="word"> -->
+                    <h1 class="t-center  bg-success">查詢字義(使用教育部提供的opendata)</h1>
+                <!-- </div> -->
+            </div>
+        </div>
+    </div>
+
+    <div class="full-width clearfix query_word">
+        <div class="fixed-width">
+            <div class="modal" tabindex="-1" role="dialog">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title">查詢字義</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span class="close" aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <form class="query" action="">
+                        <div class="form-row">
+                          <div class="col">
+                            <input type="text" class="form-control" id="word" placeholder="請輸入字查詢">
+                            <button class="btn btn-primary" type="submit">送出查詢</button>
+                          </div>
+                        </div>
+                      </form>
+                      <div class="result">
+                        <div class="col-lg-12 col-12">
+                            <a class="get_data btn btn-success" data-id="pronounce">發音</a>
+                            <a class="get_data btn btn-success" data-id="definition">定義</a>
+                            <a class="get_data btn btn-success" data-id="example">例子</a>
+                            <a class="get_data btn btn-success" data-id="quote">引述</a>
+                        </div>
+                        <div class="col-lg-12 col-12">
+                            <h4 class="select_title"></h4>
+                            <p class="select_data"></p>
+                            <hr>
+                        </div>
+                        
+                      </div>
+                    </div>
+
+                    <div class="modal-footer">
+                      <button type="button" id="close" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+    </div>
+
+</body>
+<script>
+    $(document).ready(function(){
+        let word = "";
+        $(".result").css("display","none");
+        $(".query").submit(function(e){
+            e.preventDefault();
+            word = $("#word").val();
+            // console.log(word);
+            console.log(word.length);
+            if(word == "" || word>1 || !word.match(/[\u3400-\u9FBF]/)){
+                alert("請輸入正確格式!");
+            }else{
+                var settings = {
+                    "async": true,
+                    "crossDomain": true,
+                    "url": "https://www.moedict.tw/uni/" + word,
+                    "method": "GET",
+                    
+                }
+                $(".result").css("display","block");
+                $.getJSON(settings).done(function (response) {
+                    // console.log(response);
+                    // for(i=0; i< response[0].DailyCohorts.length; i++)
+                    // {
+                    //     console.log(data.DailyCohorts[i].transDate);
+                    // }
+                    // for(i=0;i<response.length;i++){
+                    // }
+                    let example = "";
+                    let quote = "";
+                    let definition = "";
+                    let pronounce = "";
+                    for(i=0;i<response.heteronyms.length;i++){
+                        pronounce = pronounce + response.heteronyms[i].bopomofo + " ";
+                        // for(j=0;j<response.heteronyms[i].definitions.length;j++){
+                        //     // console.log(response.heteronyms[i].definitions[j]);
+                        //     // if(response.heteronyms[i].definitions[j].hasOwnProperty('def')){
+                        //         //     for(c=0;c<response.heteronyms[i].definitions[j].def.length;c++){
+                        //             //         console.log(response.heteronyms[i].definitions[j].def[c]);
+                        //             //     }
+                        //             // }
+                        //     console.log(response.heteronyms[i].definitions[j].def);
+                        //     definition = definition + response.heteronyms[i].definitions[j].def + " ";
+                        //     if(response.heteronyms[i].definitions[j].hasOwnProperty('example')){
+                        //         for(x=0;x<response.heteronyms[i].definitions[j].example.length;x++){
+                        //             console.log(response.heteronyms[i].definitions[j].example[x]);
+                        //             example = example + response.heteronyms[i].definitions[j].example[x] + " ";
+                        //         }
+                        //     }
+                        //     if(response.heteronyms[i].definitions[j].hasOwnProperty('quote')){
+                        //         for(x=0;x<response.heteronyms[i].definitions[j].quote.length;x++){
+                        //             console.log(response.heteronyms[i].definitions[j].quote[x]);
+                        //             quote = quote + response.heteronyms[i].definitions[j].quote[x] + " ";
+                        //         }
+                        //     }
+                        // }
+                    }
+                    $(".select_title").text("發音");
+                    if(pronounce == ""){
+                        $(".select_data").text("無相關資料!!");
+                    }else{
+                        $(".select_data").text(pronounce);
+                    }
+                    
+                    // console.log(response[0].heteronyms);
+                    // console.log(response.heteronyms);
+                    // var content = response.wind.speed;
+                    // $("#word").append(content);
+        
+                    // var word = response[0].heteronyms[0].definitions[0].def;
+                    // console.log(word);
+                    // $("#word").append(word);
+        
+                });
+                
+            }
+        });
+
+        $(".get_data").click(function(e){
+            e.preventDefault();
+            let type = "";
+            let data_id = $(this).attr("data-id");
+            console.log(data_id);
+            if(data_id == "pronounce"){
+                type = "p";
+                $(".select_title").text("發音");
+            }else if(data_id == "definition"){
+                type = "d";
+                $(".select_title").text("定義");
+            }else if(data_id == "example"){
+                type = "e";
+                $(".select_title").text("例子");
+            }else{
+                type = "q";
+                $(".select_title").text("引用");
+            }
+            var settings = {
+                    "async": true,
+                    "crossDomain": true,
+                    "url": "https://www.moedict.tw/uni/" + word,
+                    "method": "GET",
+                    
+                }
+            $.getJSON(settings).done(function (response) {
+                    let data = "";
+                    for(i=0;i<response.heteronyms.length;i++){
+                        if(type == "p"){
+                            data = data + response.heteronyms[i].bopomofo + " ";
+                        }else{
+                            for(j=0;j<response.heteronyms[i].definitions.length;j++){
+                                if(type == "d"){
+                                    data = data + response.heteronyms[i].definitions[j].def + " ";
+                                }else if(type == "e"){
+                                    if(response.heteronyms[i].definitions[j].hasOwnProperty('example')){
+                                        for(x=0;x<response.heteronyms[i].definitions[j].example.length;x++){
+                                            console.log(response.heteronyms[i].definitions[j].example[x]);
+                                            data = data + response.heteronyms[i].definitions[j].example[x] + " ";
+                                        }
+                                    }else{
+                                        data = "無任何資料!";
+                                    }
+                                }else{
+                                    if(response.heteronyms[i].definitions[j].hasOwnProperty('quote')){
+                                        for(x=0;x<response.heteronyms[i].definitions[j].quote.length;x++){
+                                            console.log(response.heteronyms[i].definitions[j].quote[x]);
+                                            data = data + response.heteronyms[i].definitions[j].quote[x] + " ";
+                                        }
+                                    }else{
+                                        data = "無任何資料!";
+                                    }
+                                }
+                                
+                            }
+                        }
+                        
+                    }
+                    if(data == ""){
+                        $(".select_data").text("無相關資料!!");
+                    }else{
+                        $(".select_data").text(data);
+                    }
+
+                
+                    // console.log(response[0].heteronyms);
+                    // console.log(response.heteronyms);
+                    // var content = response.wind.speed;
+                    // $("#word").append(content);
+        
+                    // var word = response[0].heteronyms[0].definitions[0].def;
+                    // console.log(word);
+                    // $("#word").append(word);
+        
+                });
+
+        });
+
+        // $.get("https://raw.githubusercontent.com/g0v/moedict-data/master/dict-revised.json",
+        //     function(data,status){
+        //         $(".word").html(data);
+        //         console.log(data.hateronyms[0].definitions);
+        //     }
+        // )
+
+        $(".search h1").click(function(){
+            $(".query_word").css("display","block");
+        });
+
+        $(".close").click(function(){
+            $(".query_word").css("display","none"); 
+            $(".result").css("display","none");
+        });
+
+        $("#close").click(function(){
+            $(".query_word").css("display","none"); 
+            $(".result").css("display","none");
+        });
+
+        $(".hamburger").click(function(){
+                $(this).toggleClass('hamburger-x');
+                $(".menu").slideToggle();
+                // $(".login").slideToggle();
+            })
+    })
+</script>
+</html>

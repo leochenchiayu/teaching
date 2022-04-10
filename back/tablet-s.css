@@ -1,0 +1,124 @@
+@media(min-width: 600px){
+    /* BTN */
+    
+    /* GRID */
+    
+    .fixed-width {
+        width: 600px;
+        
+    }
+    .col-md-1{
+        width: calc(100% / 12 * 1);
+    }
+    .col-md-2{
+        width: calc(100% / 12 * 2);
+    }
+    .col-md-3{
+        width: calc(100% / 12 * 3);
+    }
+    .col-md-4{
+        width: calc(100% / 12 * 4);
+    }
+    .col-md-5{
+        width: calc(100% / 12 * 5);
+    }
+    .col-md-6{
+        width: calc(100% / 12 * 6);
+    }
+    .col-md-7{
+        width: calc(100% / 12 * 7);
+    }
+    .col-md-8{
+        width: calc(100% / 12 * 8);
+    }
+    .col-md-9{
+        width: calc(100% / 12 * 9);
+    }
+    .col-md-10{
+        width: calc(100% / 12 * 10);
+    }
+    .col-md-11{
+        width: calc(100% / 12 * 11);
+    }
+    .col-md-12{
+        width: calc(100% / 12 * 12);
+    }
+    
+    nav .logo {
+        /* float: left; */
+    }
+    nav .menu {
+        /* float: left; */
+        /* margin-left: 20px; */
+    }
+    nav .login {
+        /* float: right; */
+    }
+    nav li {
+        list-style: none;
+        /* float: left; */
+    }
+    nav a,.username {
+        display: block;
+        line-height: 50px;
+        color: #fff;
+        text-decoration: none;
+        padding: 0 10px;
+    }
+    nav a:hover {
+        color: #1b2a49
+    }
+    /* GRID DONE */
+    /* NAV ***************************************************/
+   
+    nav a:hover {
+        color: #1b2a49
+    }
+    /* HEADER */
+    
+    /* header {
+        display: table;
+        height: 600px;
+        background: url("https://picsum.photos/id/1/1600/800") no-repeat center center;
+        background-size: cover;
+    }
+    header .fixed-width {
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+    } */
+
+    header h1 {
+        font-size: 52px;
+       
+    }
+    header p {
+        
+        /* font-size: 30px; */
+       
+    }
+    
+    /* PRODUCT */
+    
+    /* AD */
+    /* #ad {
+        padding-top: 120px;
+        padding-bottom: 120px;
+        background: url("https://picsum.photos/id/190/1600/800")no-repeat center center;
+        background-size: cover;
+        text-align: center;
+    } */
+   
+    
+
+    /* BUSINESS */
+   
+    /* SERVICE */
+    
+
+    /* FOOTER */
+    .sns a{
+        display: inline-block;
+        margin-bottom: 0;
+    }
+}

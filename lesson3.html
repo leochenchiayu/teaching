@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>唐代</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="shortcut icon" href="LOGO.png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="hamburger.css">
+    <link rel="stylesheet" href="./css/lesson3.css">
+</head>
+<style>
+    /*hamburger*/
+    
+</style>
+<body>
+    <nav class="full-width clearfix">
+        <div class="fixed-width">
+            <div class="hamburger"><span></span></div>
+            <div class="logo">
+                <a href="#"><img style="display:block;" src="LOGO.png" alt=""></a>
+            </div>
+            <!-- <div class="collapse"> -->
+                <div class="menu">
+                    <ul>
+                        <li><a href="index.html">首頁</a></li>
+                        <li class="down1"><a href="lesson1.html">先秦</a></li>
+                        <li class="down2"><a href="lesson2.html">魏晉</a></li>
+                        <li class="down3"><a href="lesson3.html">唐代</a></li>
+                        <li class="down4"><a href="lesson4.html">明清</a></li>
+                        <li class="down5"><a href="lesson5.html">現代</a></li>
+                        <li class="down5"><a href="search.html">搜尋字義</a></li>
+                    </ul>
+                </div>
+            <!-- </div> -->
+                <div class="login">
+                    <ul>
+                        <li><a href="./back/php_user/register.php">註冊</a></li>
+                        <li><a href="./back/php_user/login.php">登入</a></li>
+                    </ul>
+                </div>
+        </div>
+    </nav>
+    
+    
+   
+    
+    
+    <div id="slider">
+        
+        <div id="top">
+            <img src="ch3-1.jpg" alt="">
+            <div class="on_img">
+
+            </div>
+            <div class="click_me">
+                <p>點我往下看</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="full-width clearfix starting title_top">
+        <div class="fixed-width vam">
+            <div class="col-lg-6 col-12">
+                <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1386431937l/19263978.jpg" alt="">
+            </div>
+            <div class="col-lg-6 col-12">
+                <h1 class="t-center">神怪類</h1>
+                <h1 class="t-center">著作介紹</h1>
+                <h1 class="t-center"><strong>《枕中記》</strong></h1>
+            </div>
+        </div>
+    </div>
+    
+    <div class="full-width clearfix explanation">
+        <div class="fixed-width">
+            <div class="col-xl-12 col-12">
+                <div class="col-lg-12 col-12">
+                    <h1><strong>成語〈黃粱一夢〉</strong></h1>
+                </div>
+                <div class="col-lg-12 col-12">
+                    <h4><strong>釋義：</strong>比喻榮華富貴如夢一般，短促而虛幻。亦比喻欲
+                        望落空。</h4>
+                    <h4><strong>例句：</strong>當年他在商場叱吒風雲，而今卻潦倒街頭，商場
+                        生涯猶如黃梁一夢，令人不勝唏噓</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="full-width clearfix reality">
+        <div class="fixed-width">
+            <div class="col-xl-12 col-12">
+                <div class="col-lg-4 col-12">
+                    <h1 class="t-center"><strong>現實</strong></h1>
+                    <img src="https://cdn3.iconfinder.com/data/icons/geek-3/24/Pokemon_Go_Gym_video_game_ar_augmented_reality-512.png" alt="">
+                </div>
+                <div class="col-lg-4 col-12">
+                    <h1 class="t-center"><strong>夢境</strong></h1>
+                    <img src="https://cdn4.iconfinder.com/data/icons/happy-new-year/4167/Christmas-13-512.png" alt="">
+                </div>
+                <div class="col-lg-4 col-12">
+                    <h1 class="t-center"><strong>曲終</strong></h1>
+                    <img src="https://cdn0.iconfinder.com/data/icons/essentials-9/128/__Note-512.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+     
+
+
+   
+    <script>
+        function debounce(func, wait = 20, immediate = true) {
+      var timeout;
+      return function() {
+        var context = this, args = arguments;
+        var later = function() {
+          timeout = null;
+          if (!immediate) func.apply(context, args);
+        };
+        var callNow = immediate && !timeout;
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+        if (callNow) func.apply(context, args);
+      };
+    };
+
+    const sliderImages = document.querySelectorAll('.novel');
+
+    function checkSlide() {
+      sliderImages.forEach(sliderImage => {
+        // half way through the image
+        console.log("1:" + window.scrollY)
+        console.log("2:" + innerHeight);
+        console.log("2-1" + sliderImage.clientHeight );
+        const slideInAt = (window.scrollY + window.innerHeight) - sliderImage.clientHeight / 2;
+        console.log("3:" + slideInAt)
+        // bottom of the image
+        const imageBottom = sliderImage.offsetTop + sliderImage.clientHeight;
+        const isHalfShown = slideInAt > sliderImage.offsetTop;
+        const a = sliderImage.offsetTop
+        console.log("4:" + a);
+        const isNotScrolledPast = window.scrollY < imageBottom;
+        console.log("5" + isNotScrolledPast);
+        console.log("6" + isHalfShown);
+        if (isHalfShown && isNotScrolledPast) {
+            sliderImage.classList.add('active');
+        } else {
+            sliderImage.classList.remove('active');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', debounce(checkSlide));
+        let s=0;
+        $(document).ready(function(){
+            $(".hamburger").click(function(){
+                $(this).toggleClass('hamburger-x');
+                $(".menu").slideToggle();
+                // $(".login").slideToggle();
+            })
+
+            $(".click_me").click(function(){
+                console.log("XXXX");
+                $("html, body").animate(
+                    {
+                        scrollTop: $(".title_top").offset().top
+                    },
+                "slow");
+            });
+        
+
+            $(window).resize/*控制畫面大小*/(function(){
+                let w =$(window).width();
+                console.log(w);
+                if(w>960){
+                    $('.menu').show();
+                    // $('.login').show();
+                }else{
+                    $('.menu').hide();
+                    // $('.login').hide();
+                    $('.hamburger').removeClass('hamburger-x');
+                }
+            })
+            
+        })
+        
+           
+    
+
+        
+    </script>
+
+    
+</body>
+</html>
+   
