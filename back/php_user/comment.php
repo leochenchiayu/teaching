@@ -190,10 +190,7 @@ $info = get_user_info();
                         </li>
                         <li class="t-center down1"><a class="mt-auto" href="comment_list.php">留言列</a>
                         </li>
-                        <li class="t-center"><a class="mt-auto" href="popular_comment.php">人氣留言</a></li>
-                        <li class="t-center down3"><a class="mt-auto" href="member.php">成員列表</a></li>
                         <li class="t-center down4"><a class="mt-auto" href="comment.php">我要留言</a>
-                        <li class="t-center down4"><a class="mt-auto" href="commentedit.php">我的留言</a>
                             
                         </li>
                     </ul>

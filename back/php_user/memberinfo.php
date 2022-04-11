@@ -11,7 +11,6 @@
     if(!empty($info)){
         foreach($info as $infos){
             $user=$infos['username'];
-            $level=$infos['userlevel'];
             $id = $infos['id'];
         } 
     }
@@ -283,10 +282,7 @@
                         </li>
                         <li class="t-center down1"><a class="mt-auto" href="comment_list.php">留言列</a>
                         </li>
-                        <li class="t-center"><a class="mt-auto" href="popular_comment.php">人氣留言</a></li>
-                        <li class="t-center down3"><a class="mt-auto" href="member.php">成員列表</a></li>
                         <li class="t-center down4"><a class="mt-auto" href="comment.php">我要留言</a>
-                        <li class="t-center down4"><a class="mt-auto" href="commentedit.php">我的留言</a>
                             
                         </li>
                     </ul>
@@ -294,7 +290,6 @@
             <!-- </div> -->
                 <div class="login">
                     <ul>
-                        <li class="t-center username"><a><?php echo $level=='admin'?'管理員:':'會員';?><?php echo $user,"您好!";?></a></li>
                         <li class="t-center"><a href="../php/logout.php">登出</a></li>
                     </ul>
                 </div>
