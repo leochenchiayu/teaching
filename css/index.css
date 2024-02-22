@@ -36,11 +36,6 @@
         height: 60px;
     }
 
-    
-    
-    
-    
-
     @media(min-width:960px){
         .hamburger {
             display: none;
@@ -63,8 +58,6 @@
             display:block;    
         }
     }
-    /*endhamburger*/
-
    
     .bg{
         height: auto;
