@@ -69,7 +69,7 @@
     }
     nav{
         height: 60px;
-        background: #cccb85f;
+        background: #3cb371ac;
         /* transition:2s; */
         animation-name:nav;
         animation-duration: .5s;
